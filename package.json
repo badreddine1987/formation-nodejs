@@ -4,8 +4,9 @@
   "description": "<!-- formation doranco du 7 fevrier 2023 -->",
   "main": "index.js",
   "scripts": {
-    "compiler:typescript": "npx tsc --watch",
-    "compiler2:typescript": "npx nodemon dist/index.js"
+    "watch:typescript": "npx tsc --watch",
+    "watch:app": "npx nodemon dist/index.js",
+    "watch:currently": "npx concurrently npm:watch:typescript npm:watch:app"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/badreddine1987/formation-nodejs#readme",
   "devDependencies": {
     "@types/node": "^18.14.2",
+    "concurrently": "^7.6.0",
     "typescript": "^4.9.5"
   }
 }
