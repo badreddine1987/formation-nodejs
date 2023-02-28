@@ -1,0 +1,25 @@
+{
+  "name": "formation-nodejs",
+  "version": "1.0.0",
+  "description": "<!-- formation doranco du 7 fevrier 2023 -->",
+  "main": "index.js",
+  "scripts": {
+    "compiler:typescript": "npx tsc --watch",
+    "compiler2:typescript": "npx nodemon dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badreddine1987/formation-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/badreddine1987/formation-nodejs/issues"
+  },
+  "homepage": "https://github.com/badreddine1987/formation-nodejs#readme",
+  "devDependencies": {
+    "@types/node": "^18.14.2",
+    "typescript": "^4.9.5"
+  }
+}
