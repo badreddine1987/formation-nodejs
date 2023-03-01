@@ -1,28 +1,23 @@
-import fastify from 'fastify';
+import fastify from 'fastify'
+import fastifyPlugin from 'fastify-plugin'
+import calculatrice from './routes/calculatrice'
+// Création d'une application (notre serveur logique HTTP)
+const app = fastify()
 
-const app = fastify();
-
+// Première route sur le resource principale
 app.get('/', () => {
-  return 'Bienvenue sur mon super serveur';
-});
+  return {
+    message: 'Coucou',
+  }
+})
 
-app.get('/hello',  () => {
-  return 'Bonjour tout le monde ! je suis trop fort voici ma requete';
-});
+// enregistrement de notre plugin
+app.register(fastifyPlugin(calculatrice))
 
-app.get("/eleves", (req, res) => {
-  const eleves = [
-    [1, "john", "john", 32],
-    [2, "rose", "john", 36],
-    [3, "jane", "john", 40],
-    [4, "jean", "john", 38],
-  ];
-
-  res.header("Developed-With", "fastify");
-  res.send(eleves);
-});
-
+// On écoute une porte de notre ordinateur
 app.listen({ port: process.env.PORT as any, host: process.env.HOST }, () => {
-   
-    console.log('Mon serveur est prèt : http://${process.env.HOST}:${process.env.PORT}')
-  })
+  // Petit fonction qui se déclenche lorsque notre serveur se met à écouter la porte
+  console.log(
+    `Mon serveur est prèt : http://${process.env.HOST}:${process.env.PORT}`,
+  )
+})
