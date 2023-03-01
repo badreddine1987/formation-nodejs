@@ -1,4 +1,3 @@
-GET http://127.0.0.1:5656
-
-
+GET http://127.0.0.1:5656/eleves
+Developed-With: fastify
 
